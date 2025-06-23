@@ -1,0 +1,136 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* REMOVED: padding-top: 120; */
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Consider if 100vh is always desired. If content can exceed screen height, remove or adjust. */
+    min-height: 100vh; /* Changed to min-height to allow content to push body height */
+    margin: 0;
+    /* Allows vertical scrolling if content overflows the initial viewport */
+    /* overflow-y: auto;  You might need this on the body if the container gets too tall */
+}
+
+/* Container styling */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    /* Add a small margin top/bottom to ensure space if it hits the edges on very small screens */
+    margin: 20px auto;
+}
+
+/* Heading styling */
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    /* Ensure padding-top 120 wasn't for the heading */
+}
+
+/* Form group styling */
+.form-group {
+    /* Removed margin-top: 0px; as it's default if margin-bottom is set */
+    margin-bottom: 14px;
+}
+
+/* Label styling */
+label {
+    font-size: 1rem;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Input and select field styling */
+input[type="number"], select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #acb4b7;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgb(166, 183, 203);
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #385c84;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #004494;
+}
+
+/* Result section styling */
+.result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 15px;
+    border-radius: 6px;
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+.result p {
+    font-weight: bold;
+}
+
+.result p.cancel {
+    color: #d32f2f;
+}
+
+.result p.not-cancel {
+    color: #2e8633;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        /* On smaller screens, you might want less top/bottom margin */
+        margin: 10px auto; /* Adjust as needed */
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        padding: 12px;
+    }
+
+    /* If the content is still too tall, you might need to adjust font sizes or padding for fields */
+    input[type="number"], select {
+        padding: 10px; /* Slightly reduce padding */
+        font-size: 0.95rem; /* Slightly reduce font size */
+    }
+}
