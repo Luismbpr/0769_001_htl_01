@@ -11,6 +11,8 @@ WORKDIR /app
 
 ## Install system dependencies required by LightGBM
 ## LightGBM requires additional dependencies: libgomp1, clean
+## Error: it is not apt-get-install, it is apt-get install
+## RUN apt-get update && apt-get-install -y --no-install-recommends \
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgomp1 \
     && apt-get clean \

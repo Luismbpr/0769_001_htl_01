@@ -10,7 +10,13 @@ class CustomException(Exception):
     
     @staticmethod
     def get_detailed_error_message(error_message, error_detail:sys):
-        _, _, exc_tb = error_detail.exc_info()
+        ## Use this when using local Script
+        ## This will not be able to handle credentials error
+        #_, _, exc_tb = error_detail.exc_info()
+        
+        ## Use this for CI/CD
+        ## This will be able to handle credentials error
+        _, _, exc_tb = traceback.sys.exc_info()
         file_name = exc_tb.tb_frame.f_code.co_filename
         line_number = exc_tb.tb_lineno
 
