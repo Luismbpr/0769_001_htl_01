@@ -36,7 +36,7 @@ notebooks
 template.ipynb
 template.py
 
-Dockerfile
-Jenkinsfile
+#Dockerfile
+#Jenkinsfile
 logger_test.py
 custom_exception_test.py
