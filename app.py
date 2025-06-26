@@ -37,7 +37,8 @@ def index():
     ## Will show index.html (it should always be running) but without any prediction
     return render_template("index.html", prediction=None)
 
-## For CICD Deployment it should be in port=8080
+## For GCP Cloud Deployment it should be in port=8080
 ## Flask by default runs at port=5000
 if __name__=="__main__":
     app.run(host='0.0.0.0' , port=8080)
+    #app.run(host='0.0.0.0' , port=5000)
