@@ -6,6 +6,11 @@ FROM python:slim
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
+## In case this not works I might need to add the credentials.json to the Dockerfile
+## ARG
+#ARG GOOGLE_APPLICATION_CREDENTIALS_PATH
+#ENV GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
+
 ## Set the working directory
 WORKDIR /app
 
@@ -20,6 +25,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 ## Copy all the application code from the project directory
 COPY . .
+
+
+## Copy Credentials File
+## Way 01 to see which one works
+#COPY ${GOOGLE_APPLICATION_CREDENTIALS_PATH}/app/credentials.json
+## Way 02 to see which one works
+#COPY ${GOOGLE_APPLICATION_CREDENTIALS_PATH} /app/credentials.json
 
 ## Install the package in editable mode
 ## We do not want these type of files __pycache__
