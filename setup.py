@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 ## reading line by line annd storing them into a single variable
-with open("/Users/luis/Documents/Programming/dev/0769_Beginner_Advanced_MLOPS_GCP_CICD/venv_0769_Beginner_Advanced_MLOPS_GCP_CICD/0769_02_Reservation_Prediction/Project01/requirements.txt") as f:
+with open("0769_02_Reservation_Prediction/Project01/requirements.txt") as f:
     requirements = f.read().splitlines()
     #print(requirements)
 
